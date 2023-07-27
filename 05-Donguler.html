@@ -1,0 +1,104 @@
+<script>
+    const yaz = (x) => document.write(x + "<br>");
+    const ciz = () => document.write("<hr>");
+
+    for (let i = 0; i < 6; i++) {
+        yaz(i);
+    }
+
+    ciz();
+
+    let j = 0;
+    while (j < 6) {
+        yaz(j++);
+    }
+
+    ciz();
+
+    // bir string karakterlerini alma
+    let str = "MOUSE";
+    for (const c of str)
+        yaz(c);
+
+    ciz();
+
+    // bir dizinin öğelerini alma
+    let dizi = ["ali", "can", "cem"];
+    for (const n of dizi)
+        yaz(n);
+
+    ciz();
+
+    // metot ile dönme
+    dizi.forEach(x => yaz(x));
+    ciz();
+    [..."ankara"].forEach(x => yaz(x));
+
+    ciz();
+
+    // do...while
+    let k = 5;
+    do {
+        yaz(k--);
+    } while (k >= 0);
+
+    // nesnenin özelliklerini dönme
+    let car = {
+        name: "BMW",
+        hp: 184,
+        year: 2016
+    };
+
+    ciz();
+
+    // for..in
+    for (const key in car)
+        yaz(key + ": " + car[key]);
+
+    ciz();
+    let arr = ["ateş", "su", "toprak", "tahta"];
+
+    for (const i in arr)
+        yaz(i + ": " + arr[i]);
+
+    ciz();
+
+    for (let i = 0; i < arr.length; i++) {
+        yaz(i + ": " + arr[i]);
+    }
+
+    ciz();
+
+    arr.forEach(function (value, index) {
+        yaz(index + ": " + value);
+    });
+
+    /*
+    ÖZET
+    1. for
+    2. for..in
+    3. for..of
+    4. while
+    5. do..while
+    6. forEach()
+    */
+    ciz();
+    // 1'den 10' kadar olan sayıları 7 hariç yazdır
+    for (let i = 1; i <= 10; i++) {
+        if (i == 7) continue;
+        yaz(i);
+    }
+    ciz();
+    // 1'den başlayarak sayıları yazdır ANCAK
+    // 5'le bölünen bir sayıya gelince yazdır çık
+    let m = 0;
+    while (true) {
+        yaz(++m);
+
+        if (m % 5 == 0)
+            break;
+    }
+
+    // ÖZET: continue ve break c# diliyle aynı
+
+</script>

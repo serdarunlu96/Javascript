@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>forEach()</title>
+</head>
+
+<body>
+    <h1>Ankara</h1>
+    <h2>Grinin 50 Tonu</h2>
+
+    <h3>İlçeler</h3>
+    <ul>
+        <li>Çankaya</li>
+        <li>Keçiören</li>
+        <li>Yenimahalle</li>
+        <li>Etimesgut</li>
+        <li>Mamak</li>
+    </ul>
+
+    <h3>Gez & Gör</h3>
+    <ul>
+        <li>Ankara Kalesi</li>
+        <li>Anıtkabir</li>
+        <li>Eymir Gölü</li>
+    </ul>
+
+    <script>
+        // tüm li'lerin sonuna içindeki metnin 
+        // uzunluğunu yazdır
+        let tumOgeler = document.querySelectorAll("li");
+
+        tumOgeler.forEach((oge) => {
+            oge.textContent += " (" + oge.textContent.length + ")";
+        });
+
+    </script>
+
+</body>
+
+</html>

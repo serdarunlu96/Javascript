@@ -1,0 +1,87 @@
+<script>
+    // tek mi çift mi?
+    let n = 6;
+    let sonuc = n % 2 == 0 ? "çift" : "tek";
+    document.write(n + " bir " + sonuc + " sayıdır. <br>");
+    document.write(`${n} bir ${sonuc} sayıdır.<br>`);
+
+    if (n % 2 == 0)
+        document.write(n + " bir çift sayıdır.");
+    else
+        document.write(n + " bir tek sayıdır.");
+
+    document.write("<br>");
+
+    switch (n % 2) {
+        case 0:
+            document.write(n + " bir çift sayıdır.");
+            break;
+        default:
+            document.write(n + " bir tek sayıdır.");
+            break;
+    }
+    document.write("<br>");
+
+    // javascript'in tuhaflıkları #1
+    let sonuc2 = n % 2 ? "tek" : "çift";
+    document.write(`${n} bir ${sonuc2} sayıdır.<br>`);
+
+    // javascriptte 0, "", null, undefined gibi değerler FALSE kabul edilir.
+    // 1, -5, "ali", {}, [], gibi değerler TRUE kabul edilir.
+    // türkçe'de doğrumtırak, doğrumsu, doğru gibi, doğruca diye tabir edilebilecek
+    // TRUTHY diye bir sıfat vardır. bu TRUE kabul edilen değelere TRUTHY denir.
+    // FALSE kabul edilen değerlere FALSY denir.
+    if (0)
+        document.write("evet");
+    else
+        document.write("hayır");
+
+    if ("mahmut")
+        document.write("evet");
+    else
+        document.write("hayır");
+
+    // https://developer.mozilla.org/en-US/docs/Glossary/Truthy
+    // https://developer.mozilla.org/en-US/docs/Glossary/Falsy
+    document.write("<br>");
+
+    // javascript'in tuhaflıkları #2
+    // == ile === farkı
+    document.write(1 == "1");  // true
+    document.write(1 === "1"); // false
+
+    // neden? çünkü ilkinde taraflar farklı türde olduğu için
+    // otomatik olarak (implicitly) string number türüne çevrilir ve SONRA kıyaslama yapılır.
+
+    // ikincide ise eşit olması için TÜRLERİN DE aynı olması gerekir
+    // yani === operatörü true üretmesi için tarafların 
+    // hem TÜRÜNÜN hem de DEĞERİNİN aynı olması zorunludur.
+
+
+    // javascript'in tuhaflıkları #3
+    document.write("2" * "2"); // 4
+    // javascript'te çarpma işlemi string'ler arasında yapılamaz. BUNU BİLDİĞİ İÇİN
+    // tarafları MÜMKÜNSE sayıya dönüştürür.
+
+    document.write("ali" * "veli"); // NaN: Not a Number
+
+    // javascript'in tuhaflıkları #4
+    let x = "4";
+    let y = +"4"; // let y = Number("4");
+    let z = Number("4"); // sayıya çeviren metot
+
+    document.write("<hr>");
+    // x ve y'nin türleri nelerdir?
+    document.write("x: " + typeof x + "<br>");
+    document.write("y: " + typeof y + "<br>");
+    document.write("z: " + typeof z + "<br>");
+
+    document.write("<hr>");
+    // javascript'in tuhaflıkları #5
+    // implicit conversion
+    document.write(true + true + true); // 1 + 1 + 1 = 3
+
+
+    document.write("<hr>");
+
+</script>

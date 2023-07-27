@@ -1,0 +1,39 @@
+<style>
+    body {
+        font-size: 2rem;
+    }
+</style>
+
+<script>
+    // aritmetik operatörler
+    yaz(5 + 4 * 3 / 2 - 1); // 10
+    yaz(2 ** 3); // 8
+    yaz(10 % 7); // 3
+
+    yaz(2 < 3);
+    yaz("2" == 2);
+    yaz("2" === 2);
+    yaz(1 != 2);
+
+    yaz(typeof document);
+
+    // string concatenation
+    yaz("1" + 1);
+
+    // taraflardan en az birinde string varsa + operatörü uç uca ekleme yapar
+
+    yaz(!0); // true
+    yaz(!5); // false
+
+    // . operatörü (member access)
+    yaz(window.innerWidth); // pencere genişliği
+
+    // () operatörü 
+    // fonksiyon çağırır
+    let karesi = (x) => x * x;
+    yaz(karesi(12));
+
+    function yaz(x) {
+        document.write(x + "<br>");
+    }
+</script>

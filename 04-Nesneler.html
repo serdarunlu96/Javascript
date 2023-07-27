@@ -1,0 +1,52 @@
+<script>
+    const yaz = (s) => document.write(s + "<br>");
+
+    let insan = {
+        ad: "Ali",
+        yas: 33,
+        kunye: function () {
+            return `${this.ad} (${this.yas} yaşında)`;
+        }
+    };
+
+    // adını değiştirebilirim
+    insan.ad = "Veli";
+
+    yaz(insan.ad);
+    yaz(insan.yas);
+    yaz(insan.kunye());
+
+    // istersem sonradan ek yapabilirim
+    insan.soyad = "Yılmaz";
+    yaz(insan.soyad);
+
+    // bir nesnenin property'lerine . (nokta) operatörü
+    // ile erişebileceğiniz gibi indexer [] operatörü ile de
+    // erişim sağlayabilirsiniz
+    yaz(insan["ad"]);
+    yaz("<hr>");
+
+    let o2 = {
+        id: 1,
+        fname: "Mike",
+        lname: "Wilson",
+        age: 66,
+        married: false
+    };
+
+    // o2 nesnesinin tüm property'lerine
+    // döngüyle erişebilir miyiz?
+    for (const key in o2) {
+        yaz(key + " => " + o2[key]);
+    }
+
+    // var vs let
+    {
+        var a = 4; // let yap
+    }
+    yaz(a);
+
+    // let scope değişkeni oluşturur
+
+
+</script>

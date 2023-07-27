@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Giriş</title>
+    <style>
+        canvas {
+            border: 10px solid #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JavaScript Öğreniyorum</h1>
+
+    <div>
+        <label>
+            <input onchange="degisti()" type="checkbox" id="chkGoster">
+            Aşağıdaki paragrafı göster
+        </label>
+    </div>
+    <p id="parag" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem dignissimos
+        commodi distinctio consequatur molestias voluptate error inventore, labore sapiente, sit, laborum aspernatur vel
+        laboriosam temporibus! Aspernatur, dolores iure? Minima, error.</p>
+
+    <hr>
+    <canvas id="tuval" width="200" height="200"></canvas>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam itaque, eum ipsum ipsa suscipit laboriosam ex
+        nesciunt amet, et esse corporis ducimus culpa doloremque dolore vel quos illum eos blanditiis.</p>
+    <div>
+        <button onclick="arttir()" id="btnSayac">0</button>
+    </div>
+
+    <script>
+        // paragrafı göster/gizle
+        const chk = document.getElementById("chkGoster");
+        const p = document.getElementById("parag");
+        function degisti() {
+            p.style.display = chk.checked ? "block" : "none";
+            // if (chk.checked)
+            //     p.style.display = "block";
+            // else
+            //     p.style.display = "none";
+        }
+
+        // javascript ile çizim yapabilirsiniz
+        let canvas = document.getElementById("tuval");
+        let mesafe = canvas.width;
+        let ctx = canvas.getContext("2d");
+
+        function ciz() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "red";
+            ctx.fillRect(20, 20, 100, 100);
+
+            // canvas kullanarak çeşitli animasyonlar ve oyunlar hazırlanabilir
+            // sağdan sola kayan bir yazı
+            ctx.fillStyle = "blue";
+            ctx.font = "20px 'Comic Sans MS'";
+            ctx.fillText("Bugün Çarşamba", mesafe--, 190);
+            if (mesafe < -canvas.width)
+                mesafe = canvas.width;
+        }
+        setInterval(ciz, 50);
+
+        // arttir fonksiyonunu her saniye çalıştır
+        setInterval(arttir, 1000);
+
+        // fonksiyon: butonun içindeki sayıyı arttır
+        let sayi = 0;
+        function arttir() {
+            document.getElementById("btnSayac").textContent = ++sayi;
+        }
+
+        // döküman içindeki ilk bulduğun h1'in
+        // arkaplan rengini siyah yazını rengini beyaz yap
+        let baslik = document.querySelector("h1");
+        baslik.style.backgroundColor = "black";
+        baslik.style.color = "white";
+    </script>
+</body>
+
+</html>

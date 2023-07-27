@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>JavaScript Öğreniyorum</h1>
+
+    <script>
+        let a;
+        a = 1;
+
+        let b = "ankara";
+        document.write(b);
+        console.log("Bu mesaj konsolda görünür..");
+
+        const pi = 3.14;
+        // pi = 4; // atayamazsın!
+
+        // document.write çok kullanılmaz dediniz
+        // biz sayfa bir şeyleri nasıl yazacağız
+        // CEVAP: Nereye yazacağını bilmen lazım!
+
+        // Örneğin: Ben başlığın sonuna gülücük eklemek istiyorum.
+        // 1. Önce başlığı bir değişkene alalım
+        let c = document.querySelector("h1");
+        c.innerHTML += "<em>:)</em>";
+
+        // JavaScript'te Veri Türleri
+        // 6 adet veri türü vardır
+        let d1 = 3; // Number
+        let d2 = 'ali'; // String
+        let d3 = true; // Boolean
+        let d4 = { ad: "Ece", yas: 33 }; // Object
+        let d5 = function () {
+            document.write("hello");
+        }; // Function
+        let d6; // undefined
+
+        document.write("<hr>");
+        // hocam ispatla!
+        document.write(d1 + ": " + typeof d1 + "<br>");
+        document.write(d2 + ": " + typeof d2 + "<br>");
+        document.write(d3 + ": " + typeof d3 + "<br>");
+        document.write(d4 + ": " + typeof d4 + "<br>");
+        document.write(d5 + ": " + typeof d5 + "<br>");
+        document.write(d6 + ": " + typeof d6 + "<br>");
+
+        // hocam peki dizilerin türü ne? c: object
+        // hocam peki null'ın türü ne? c: object
+        let dizi = [1, 2, 3];
+        document.write(dizi + ": " + typeof dizi + "<br>");
+        document.write("null" + ": " + typeof null + "<br>");
+
+    </script>
+</body>
+
+</html>
